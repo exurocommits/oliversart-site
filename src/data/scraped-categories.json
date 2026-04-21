@@ -1,0 +1,93 @@
+{
+  "scrapedAt": "2026-04-10T07:33:00.000Z",
+  "source": "oliversart.com",
+  "categories": [
+    {
+      "name": "Military - Aviation",
+      "slug": "aviation",
+      "url": "https://oliversart.com/product-category/aviation/",
+      "count": 210,
+      "subcategories": [
+        { "name": "Artists - Aviation, Military", "slug": "artists-aviation", "url": "https://oliversart.com/product-category/aviation/artists-aviation/" },
+        { "name": "Anthony Saunders", "slug": "anthony-saunders", "url": "https://oliversart.com/product-category/aviation/artists-aviation/anthony-saunders/", "artist": true },
+        { "name": "Chris Collingwood", "slug": "chris-collingwood", "url": "https://oliversart.com/product-category/aviation/artists-aviation/chris-collingwood/", "artist": true },
+        { "name": "Gerald Coulson", "slug": "gerald-coulson", "url": "https://oliversart.com/product-category/aviation/artists-aviation/gerald-coulson/", "artist": true },
+        { "name": "James Dietz", "slug": "james-dietz", "url": "https://oliversart.com/product-category/aviation/artists-aviation/james-dietz/", "artist": true },
+        { "name": "Keith Burns", "slug": "keith-burns", "url": "https://oliversart.com/product-category/aviation/artists-aviation/keith_burns/", "artist": true },
+        { "name": "Ley Kenyon", "slug": "ley-kenyon", "url": "https://oliversart.com/product-category/aviation/artists-aviation/ley-kenyon/", "artist": true },
+        { "name": "Nicolas Trudgian", "slug": "nicolas-trudgian", "url": "https://oliversart.com/product-category/aviation/artists-aviation/nicolas-trudgian/", "artist": true },
+        { "name": "Philip E West", "slug": "philip-e-west", "url": "https://oliversart.com/product-category/aviation/artists-aviation/philip-e-west/", "artist": true },
+        { "name": "Richard Taylor", "slug": "richard-taylor", "url": "https://oliversart.com/product-category/aviation/artists-aviation/richard-taylor/", "artist": true },
+        { "name": "Robert Taylor", "slug": "robert-taylor", "url": "https://oliversart.com/product-category/aviation/artists-aviation/robert-taylor/", "artist": true },
+        { "name": "Robert Taylor Secondary Market", "slug": "robert-taylor-secondary-market", "url": "https://oliversart.com/product-category/aviation/robert-taylor-secondary-market/", "artist": true },
+        { "name": "Simon Atack", "slug": "simon-atack", "url": "https://oliversart.com/product-category/aviation/artists-aviation/simon-atack/", "artist": true },
+        { "name": "Simon Smith", "slug": "simon-smith", "url": "https://oliversart.com/product-category/aviation/artists-aviation/simon-smith/", "artist": true },
+        { "name": "Stephen Brown", "slug": "stephen-brown", "url": "https://oliversart.com/product-category/aviation/artists-aviation/stephen-brown/", "artist": true },
+        { "name": "Stuart Brown", "slug": "stuart-brown", "url": "https://oliversart.com/product-category/aviation/artists-aviation/stuart-brown/", "artist": true },
+        { "name": "All Artists", "slug": "all-artists", "url": "https://oliversart.com/product-category/aviation/all-artists/" },
+        { "name": "Battle of Britain", "slug": "battle-of-britain", "url": "https://oliversart.com/product-category/aviation/battle-of-britain/" },
+        { "name": "World War I", "slug": "world-war-i", "url": "https://oliversart.com/product-category/aviation/world-war-i/" },
+        { "name": "Vietnam", "slug": "vietnam", "url": "https://oliversart.com/product-category/aviation/vietnam/" }
+      ]
+    },
+    {
+      "name": "Motorsport",
+      "slug": "motorsport",
+      "url": "https://oliversart.com/product-category/motorsport/",
+      "subcategories": [
+        { "name": "Artists - Motorsport", "slug": "artists-motorsport", "url": "https://oliversart.com/product-category/motorsport/artists-motorsport/" },
+        { "name": "Alan Fearnley", "slug": "alan-fearnley", "url": "https://oliversart.com/product-category/motorsport/artists-motorsport/alan-fearnley/", "artist": true },
+        { "name": "Barry Rowe", "slug": "barry-rowe", "url": "https://oliversart.com/product-category/motorsport/artists-motorsport/barry-rowe/", "artist": true },
+        { "name": "Colin Carter", "slug": "colin-carter", "url": "https://oliversart.com/product-category/motorsport/artists-motorsport/colin-carter/", "artist": true },
+        { "name": "Craig Warwick", "slug": "craig-warwick", "url": "https://oliversart.com/product-category/motorsport/artists-motorsport/craig-warwick/", "artist": true },
+        { "name": "Derrick Mark", "slug": "derrick-mark", "url": "https://oliversart.com/product-category/motorsport/artists-motorsport/derrick-mark/", "artist": true },
+        { "name": "Juan Carlo Ferrigno", "slug": "juan-carlo-ferrigno", "url": "https://oliversart.com/product-category/motorsport/artists-motorsport/juan-carlo-ferrigno/", "artist": true },
+        { "name": "Nicholas Watts", "slug": "nicholas-watts", "url": "https://oliversart.com/product-category/motorsport/artists-motorsport/nicholas-watts/", "artist": true },
+        { "name": "Ray Goldsbrough", "slug": "ray-goldsbrough", "url": "https://oliversart.com/product-category/motorsport/artists-motorsport/ray-goldsbrough/", "artist": true },
+        { "name": "Rod Organ", "slug": "rod-organ-1947-2007", "url": "https://oliversart.com/product-category/motorsport/artists-motorsport/rod-organ-1947-2007/", "artist": true },
+        { "name": "Motorbikes", "slug": "motorbikes", "url": "https://oliversart.com/product-category/motorsport/motorbikes/" },
+        { "name": "Formula 1 - Modern", "slug": "formula-1-modern", "url": "https://oliversart.com/product-category/motorsport/formula-1-modern/" },
+        { "name": "Formula 1 - History", "slug": "formula-1-history", "url": "https://oliversart.com/product-category/motorsport/formula-1-history/" },
+        { "name": "Motor Racing", "slug": "motor-racing", "url": "https://oliversart.com/product-category/motorsport/motor-racing/" },
+        { "name": "Motoring Classics", "slug": "motoring-classics", "url": "https://oliversart.com/product-category/motorsport/motoring-classics/" }
+      ]
+    },
+    {
+      "name": "Maritime",
+      "slug": "maritime",
+      "url": "https://oliversart.com/product-category/maritime/",
+      "count": 14
+    },
+    {
+      "name": "Books",
+      "slug": "books",
+      "url": "https://oliversart.com/product-category/books/"
+    },
+    {
+      "name": "Contemporary Art",
+      "slug": "contemporary-art",
+      "url": "https://oliversart.com/product-category/contemporary-art/",
+      "subcategories": [
+        { "name": "Aldo Balding", "slug": "aldo-balding", "url": "https://oliversart.com/product-category/contemporary-art/aldo-balding/", "artist": true },
+        { "name": "Emma Rose", "slug": "emma-rose", "url": "https://oliversart.com/product-category/contemporary-art/emma-rose/", "artist": true },
+        { "name": "Simon Atack – Contemporary", "slug": "simon-atack-contemporary", "url": "https://oliversart.com/product-category/contemporary-art/simon-atack-contemporary/", "artist": true }
+      ]
+    },
+    {
+      "name": "Sale Gallery",
+      "slug": "sale-gallery",
+      "url": "https://oliversart.com/product-category/sale-gallery/"
+    },
+    {
+      "name": "Latest Releases",
+      "slug": "latest-releases",
+      "url": "https://oliversart.com/product-category/latest-releases/",
+      "count": 21
+    },
+    {
+      "name": "Motorsport Others",
+      "slug": "motorsport-others",
+      "url": "https://oliversart.com/product-category/motorsport-others/"
+    }
+  ]
+}
