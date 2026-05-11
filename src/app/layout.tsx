@@ -3,7 +3,6 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -26,37 +25,17 @@ export const metadata: Metadata = {
     "Hand-signed limited edition prints from the world's leading artists. Aviation, motorsport, maritime, and wildlife art.",
 };
 
-// Inline script to prevent theme flash — runs before React hydrates
-const themeScript = `
-(function() {
-  try {
-    var stored = localStorage.getItem('oliversart-theme');
-    var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    if (theme !== 'dark') {
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.add('dark');
-    }
-  } catch(e) {}
-})();
-`;
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable} dark`} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">
-        <ThemeProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );

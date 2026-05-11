@@ -11,10 +11,10 @@ export function RelatedProducts({ products, title = "You May Also Like" }: Relat
   if (products.length === 0) return null;
 
   return (
-    <section className="py-16 border-t border-navy-mid">
+    <section className="py-16 border-t border-border">
       <div className="mb-8">
         <div className="flex items-center gap-4 mb-2">
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-cream">{title}</h2>
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-text">{title}</h2>
           <div className="h-px flex-1 bg-gradient-to-r from-gold/20 to-transparent" />
         </div>
       </div>

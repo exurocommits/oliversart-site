@@ -40,7 +40,7 @@ export function ImageGallery({ images, productTitle }: ImageGalleryProps) {
     <div className="animate-fade-up" style={{ animationDelay: "100ms" }}>
       {/* Main image */}
       <div
-        className="relative aspect-[4/3] bg-navy-light rounded-xl overflow-hidden cursor-zoom-in group"
+        className="relative aspect-[4/3] bg-surface-alt rounded-xl overflow-hidden cursor-zoom-in group"
         onClick={() => setLightboxOpen(true)}
         onMouseEnter={() => setIsZooming(true)}
         onMouseLeave={() => { setIsZooming(false); setZoomPos(null); }}
@@ -60,13 +60,13 @@ export function ImageGallery({ images, productTitle }: ImageGalleryProps) {
             }
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-navy-mid to-navy-deep flex items-center justify-center">
-            <span className="font-serif text-cream-muted text-lg">{productTitle}</span>
+          <div className="w-full h-full bg-surface-alt flex items-center justify-center">
+            <span className="font-serif text-text-muted text-lg">{productTitle}</span>
           </div>
         )}
 
         {/* Zoom hint */}
-        <div className="absolute bottom-3 right-3 bg-navy-deep/70 backdrop-blur-sm text-cream-muted text-xs px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="absolute bottom-3 right-3 bg-text/60 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
           Click to expand
         </div>
       </div>
@@ -81,7 +81,7 @@ export function ImageGallery({ images, productTitle }: ImageGalleryProps) {
               className={`shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
                 i === selectedIndex
                   ? "border-gold ring-1 ring-gold/30"
-                  : "border-transparent hover:border-navy-mid"
+                  : "border-border hover:border-text-muted"
               }`}
             >
               <img

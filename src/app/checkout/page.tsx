@@ -6,16 +6,16 @@ import Link from "next/link";
 export default function CheckoutPage() {
   return (
     <>
-      <section className="py-8 border-b border-navy-mid">
+      <section className="py-8 border-b border-border">
         <Container>
-          <nav className="text-cream-muted text-sm mb-2">
+          <nav className="text-text-muted text-sm mb-2">
             <Link href="/" className="hover:text-gold transition-colors">Home</Link>
             <span className="mx-2">/</span>
             <Link href="/cart" className="hover:text-gold transition-colors">Cart</Link>
             <span className="mx-2">/</span>
-            <span className="text-cream">Checkout</span>
+            <span className="text-text">Checkout</span>
           </nav>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold">Checkout</h1>
+          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-text">Checkout</h1>
         </Container>
       </section>
 
@@ -27,19 +27,19 @@ export default function CheckoutPage() {
               {["Shipping", "Delivery", "Payment", "Review"].map((step, i) => (
                 <div key={step} className="flex items-center gap-2">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
-                    i === 0 ? "bg-gold text-navy-deep" : "bg-navy-mid text-cream-muted"
+                    i === 0 ? "bg-gold text-surface" : "bg-surface-alt text-text-muted"
                   }`}>
                     {i + 1}
                   </div>
-                  <span className={`text-sm hidden sm:block ${i === 0 ? "text-cream" : "text-cream-muted"}`}>{step}</span>
-                  {i < 3 && <div className="w-8 sm:w-16 h-px bg-navy-mid mx-2" />}
+                  <span className={`text-sm hidden sm:block ${i === 0 ? "text-text" : "text-text-muted"}`}>{step}</span>
+                  {i < 3 && <div className="w-8 sm:w-16 h-px bg-border mx-2" />}
                 </div>
               ))}
             </div>
 
             {/* Shipping form placeholder */}
             <div className="space-y-6">
-              <h2 className="font-serif text-xl font-bold text-cream">Shipping Information</h2>
+              <h2 className="font-serif text-xl font-bold text-text">Shipping Information</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Input label="First Name" placeholder="John" />
                 <Input label="Last Name" placeholder="Doe" />

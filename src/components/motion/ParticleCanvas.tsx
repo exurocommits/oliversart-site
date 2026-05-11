@@ -24,11 +24,11 @@ interface Particle {
 
 export function ParticleCanvas({
   particleCount = 60,
-  color = "#d4af37",
-  speed = 0.3,
-  size = 2,
+  color = "rgba(212,175,55,0.15)",
+  speed = 0.2,
+  size = 1.5,
   interaction = "mouse",
-  variant = "stars",
+  variant = "dust",
 }: ParticleCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouseRef = useRef({ x: -1000, y: -1000 });
@@ -39,7 +39,6 @@ export function ParticleCanvas({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Respect prefers-reduced-motion
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mq.matches) return;
 
@@ -54,7 +53,6 @@ export function ParticleCanvas({
     resize();
     window.addEventListener("resize", resize);
 
-    // Init particles
     const w = canvas.offsetWidth;
     const h = canvas.offsetHeight;
     particlesRef.current = Array.from({ length: particleCount }, () => ({
@@ -63,7 +61,7 @@ export function ParticleCanvas({
       vx: (Math.random() - 0.5) * speed,
       vy: variant === "embers" ? -Math.random() * speed - 0.1 : (Math.random() - 0.5) * speed,
       size: Math.max(0.5, Math.random() * size),
-      opacity: Math.random() * 0.7 + 0.3,
+      opacity: Math.random() * 0.5 + 0.1,
       twinkleSpeed: Math.random() * 0.02 + 0.005,
       twinklePhase: Math.random() * Math.PI * 2,
     }));
@@ -84,13 +82,11 @@ export function ParticleCanvas({
       time += 1;
 
       for (const p of particlesRef.current) {
-        // Twinkle
         p.twinklePhase += p.twinkleSpeed;
-        const twinkle = variant === "stars"
-          ? 0.4 + 0.6 * Math.abs(Math.sin(p.twinklePhase))
+        const twinkle = variant === "dust"
+          ? 0.3 + 0.7 * Math.abs(Math.sin(p.twinklePhase))
           : p.opacity;
 
-        // Mouse repulsion
         if (interaction === "mouse") {
           const dx = p.x - mouseRef.current.x;
           const dy = p.y - mouseRef.current.y;
@@ -102,11 +98,9 @@ export function ParticleCanvas({
           }
         }
 
-        // Damping
         p.vx *= 0.99;
         p.vy *= 0.99;
 
-        // Reset speed
         p.vx += (Math.random() - 0.5) * speed * 0.1;
         if (variant === "embers") {
           p.vy -= 0.005;
@@ -117,7 +111,6 @@ export function ParticleCanvas({
         p.x += p.vx;
         p.y += p.vy;
 
-        // Wrap
         if (p.x < 0) p.x = cw;
         if (p.x > cw) p.x = 0;
         if (p.y < 0) p.y = ch;

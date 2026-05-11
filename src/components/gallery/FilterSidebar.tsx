@@ -44,10 +44,10 @@ export function FilterSidebar({ filters, availableArtists, onFilterChange, onCle
 
   return (
     <aside className="w-full lg:w-64 xl:w-72 shrink-0 animate-fade-in">
-      <div className="bg-navy-light border border-navy-mid rounded-xl p-5 space-y-6 sticky top-24">
+      <div className="bg-surface border border-border rounded-xl p-5 space-y-6 sticky top-24">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h2 className="font-serif text-lg font-bold text-cream">Filters</h2>
+          <h2 className="font-serif text-lg font-bold text-text">Filters</h2>
           {hasFilters && (
             <button
               onClick={onClear}
@@ -67,9 +67,9 @@ export function FilterSidebar({ filters, availableArtists, onFilterChange, onCle
                   type="checkbox"
                   checked={filters.artists.includes(artist)}
                   onChange={() => toggleArtist(artist)}
-                  className="w-4 h-4 rounded border-navy-mid bg-navy-deep text-gold focus:ring-gold/50 focus:ring-offset-0"
+                  className="w-4 h-4 rounded border-border bg-surface text-gold focus:ring-gold/50 focus:ring-offset-0"
                 />
-                <span className="text-sm text-cream-muted group-hover:text-cream transition-colors">
+                <span className="text-sm text-text-muted group-hover:text-text transition-colors">
                   {artist}
                 </span>
               </label>
@@ -85,15 +85,15 @@ export function FilterSidebar({ filters, availableArtists, onFilterChange, onCle
               placeholder="Min"
               value={filters.minPrice}
               onChange={(e) => onFilterChange({ ...filters, minPrice: e.target.value })}
-              className="w-full bg-navy-deep border border-navy-mid rounded-lg px-3 py-2 text-sm text-cream placeholder:text-cream-muted/50 focus:outline-none focus:border-gold/50"
+              className="w-full bg-surface border border-border rounded-lg px-3 py-2 text-sm text-text placeholder:text-text-muted/50 focus:outline-none focus:border-gold/50"
             />
-            <span className="text-cream-muted text-sm">–</span>
+            <span className="text-text-muted text-sm">–</span>
             <input
               type="number"
               placeholder="Max"
               value={filters.maxPrice}
               onChange={(e) => onFilterChange({ ...filters, maxPrice: e.target.value })}
-              className="w-full bg-navy-deep border border-navy-mid rounded-lg px-3 py-2 text-sm text-cream placeholder:text-cream-muted/50 focus:outline-none focus:border-gold/50"
+              className="w-full bg-surface border border-border rounded-lg px-3 py-2 text-sm text-text placeholder:text-text-muted/50 focus:outline-none focus:border-gold/50"
             />
           </div>
         </FilterGroup>
@@ -107,9 +107,9 @@ export function FilterSidebar({ filters, availableArtists, onFilterChange, onCle
                   type="checkbox"
                   checked={filters.editionTypes.includes(type)}
                   onChange={() => toggleEdition(type)}
-                  className="w-4 h-4 rounded border-navy-mid bg-navy-deep text-gold focus:ring-gold/50 focus:ring-offset-0"
+                  className="w-4 h-4 rounded border-border bg-surface text-gold focus:ring-gold/50 focus:ring-offset-0"
                 />
-                <span className="text-sm text-cream-muted group-hover:text-cream transition-colors">
+                <span className="text-sm text-text-muted group-hover:text-text transition-colors">
                   {type} Edition
                 </span>
               </label>
@@ -124,7 +124,7 @@ export function FilterSidebar({ filters, availableArtists, onFilterChange, onCle
 function FilterGroup({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h3 className="text-xs font-semibold uppercase tracking-wider text-cream-muted mb-3">{title}</h3>
+      <h3 className="text-xs font-semibold uppercase tracking-wider text-text-muted mb-3">{title}</h3>
       {children}
     </div>
   );

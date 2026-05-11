@@ -9,12 +9,12 @@ export default function SearchPage() {
 
   return (
     <>
-      <section className="py-8 border-b border-border-light dark:border-navy-mid">
+      <section className="py-8 border-b border-border">
         <Container>
-          <nav className="text-text-muted-light dark:text-cream-muted text-sm mb-4">
+          <nav className="text-text-muted text-sm mb-4">
             <Link href="/" className="hover:text-gold transition-colors">Home</Link>
             <span className="mx-2">/</span>
-            <span className="text-[#1a1a2e] dark:text-cream">Search</span>
+            <span className="text-text">Search</span>
           </nav>
           <div className="max-w-2xl">
             <Input
@@ -29,8 +29,8 @@ export default function SearchPage() {
       <section className="py-12">
         <Container>
           <div className="flex items-center justify-between mb-8">
-            <p className="text-text-muted-light dark:text-cream-muted text-sm">{products.length} results</p>
-            <select className="bg-white dark:bg-navy-light border border-border-light dark:border-navy-mid rounded-lg px-3 py-2 text-sm text-[#1a1a2e] dark:text-cream focus:outline-none focus:border-gold">
+            <p className="text-text-muted text-sm">{products.length} results</p>
+            <select className="bg-surface border border-border rounded-lg px-3 py-2 text-sm text-text focus:outline-none focus:border-gold">
               <option>Relevance</option>
               <option>Newest</option>
               <option>Price: Low to High</option>

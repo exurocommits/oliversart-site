@@ -51,22 +51,22 @@ export function Modal({
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
       <div
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={closeOnOverlayClick ? onClose : undefined}
       />
       <div
-        className={`relative bg-navy-deep border border-navy-mid rounded-2xl shadow-2xl w-full ${sizeClasses[size]} overflow-hidden`}
+        className={`relative bg-surface border border-border rounded-2xl shadow-2xl w-full ${sizeClasses[size]} overflow-hidden`}
         role="dialog"
         aria-modal="true"
         aria-label={title}
       >
         {(title || showCloseButton) && (
-          <div className="flex items-center justify-between p-6 border-b border-navy-mid">
-            {title && <h2 className="text-xl font-serif font-bold text-cream">{title}</h2>}
+          <div className="flex items-center justify-between p-6 border-b border-border">
+            {title && <h2 className="text-xl font-serif font-bold text-text">{title}</h2>}
             {showCloseButton && (
               <button
                 onClick={onClose}
-                className="text-cream-muted hover:text-gold transition-colors ml-auto"
+                className="text-text-muted hover:text-gold transition-colors ml-auto"
                 aria-label="Close"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

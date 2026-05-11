@@ -4,11 +4,11 @@ interface BadgeProps {
 }
 
 const variantClasses: Record<string, string> = {
-  new: "bg-gold text-navy-deep",
+  new: "bg-gold text-surface",
   sale: "bg-error text-white",
-  limited: "bg-navy-mid text-gold border border-gold/30",
-  "sold-out": "bg-cream-muted/20 text-cream-muted",
-  "low-stock": "bg-warning text-navy-deep",
+  limited: "bg-surface-alt text-gold border border-gold/30",
+  "sold-out": "bg-surface-alt text-text-muted",
+  "low-stock": "bg-warning text-surface",
 };
 
 const labels: Record<string, string> = {

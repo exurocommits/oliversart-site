@@ -36,7 +36,7 @@ export function ActiveFilters({ filters, onRemoveArtist, onRemoveEdition, onClea
         <button
           key={pill.key}
           onClick={pill.onRemove}
-          className="inline-flex items-center gap-1.5 px-3 py-1 bg-navy-light border border-navy-mid rounded-full text-xs text-cream-muted hover:text-cream hover:border-gold/50 transition-colors"
+          className="inline-flex items-center gap-1.5 px-3 py-1 bg-surface border border-border rounded-full text-xs text-text-muted hover:text-text hover:border-gold/50 transition-colors"
         >
           {pill.label}
           <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

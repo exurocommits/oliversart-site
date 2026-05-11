@@ -28,7 +28,6 @@ export function GalleryPageClient({
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [visibleCount, setVisibleCount] = useState(12);
 
-  // Available artists from products
   const availableArtists = useMemo(
     () => [...new Set(initialProducts.map((p) => {
       const name = p.title.includes(" by ") ? p.title.split(" by ").slice(1).join(" by ") : "";
@@ -37,11 +36,9 @@ export function GalleryPageClient({
     [initialProducts]
   );
 
-  // Filter and sort
   const filtered = useMemo(() => {
     let result = [...initialProducts];
 
-    // Artist filter
     if (filters.artists.length > 0) {
       result = result.filter((p) => {
         const name = p.title.includes(" by ") ? p.title.split(" by ").slice(1).join(" by ") : "";
@@ -49,7 +46,6 @@ export function GalleryPageClient({
       });
     }
 
-    // Price filter (values are in pence, inputs are in pounds)
     if (filters.minPrice) {
       result = result.filter((p) => p.price >= parseInt(filters.minPrice) * 100);
     }
@@ -57,7 +53,6 @@ export function GalleryPageClient({
       result = result.filter((p) => p.price <= parseInt(filters.maxPrice) * 100);
     }
 
-    // Edition type filter
     if (filters.editionTypes.length > 0) {
       result = result.filter((p) => {
         const matches: boolean[] = [];
@@ -68,7 +63,6 @@ export function GalleryPageClient({
       });
     }
 
-    // Sort
     switch (sort) {
       case "price-asc":
         result.sort((a, b) => (a.salePrice || a.price) - (b.salePrice || b.price));
@@ -99,7 +93,6 @@ export function GalleryPageClient({
 
   const handleRemoveEdition = (type: string) => {
     if (!type) {
-      // Clear price filters
       setFilters({ ...filters, minPrice: "", maxPrice: "" });
     } else {
       setFilters({ ...filters, editionTypes: filters.editionTypes.filter((t) => t !== type) });
@@ -116,20 +109,19 @@ export function GalleryPageClient({
 
       <section className="py-8 sm:py-12">
         <Container>
-          {/* Top bar: mobile filter btn + sort + count */}
+          {/* Top bar */}
           <div className="flex items-center justify-between mb-6 gap-4">
             <div className="flex items-center gap-3">
-              {/* Mobile filter button */}
               <button
                 onClick={() => setDrawerOpen(true)}
-                className="lg:hidden inline-flex items-center gap-2 bg-navy-light border border-navy-mid rounded-lg px-3 py-2 text-sm text-cream hover:border-gold/50 transition-colors"
+                className="lg:hidden inline-flex items-center gap-2 bg-surface border border-border rounded-lg px-3 py-2 text-sm text-text hover:border-gold/50 transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
                 </svg>
                 Filters
               </button>
-              <p className="text-cream-muted text-sm">
+              <p className="text-text-muted text-sm">
                 {filtered.length} result{filtered.length !== 1 ? "s" : ""}
               </p>
             </div>
@@ -146,9 +138,8 @@ export function GalleryPageClient({
             />
           </div>
 
-          {/* Layout: sidebar + grid */}
+          {/* Layout */}
           <div className="flex gap-8">
-            {/* Desktop sidebar */}
             <div className="hidden lg:block">
               <FilterSidebar
                 filters={filters}
@@ -158,7 +149,6 @@ export function GalleryPageClient({
               />
             </div>
 
-            {/* Product grid */}
             <div className="flex-1 min-w-0">
               {visible.length > 0 ? (
                 <>
@@ -168,23 +158,23 @@ export function GalleryPageClient({
                     <div className="mt-10 text-center">
                       <button
                         onClick={() => setVisibleCount((c) => c + 12)}
-                        className="inline-flex items-center gap-2 bg-navy-light border border-navy-mid rounded-lg px-6 py-3 text-sm font-semibold text-gold hover:border-gold/50 hover:bg-navy-mid/30 transition-all"
+                        className="inline-flex items-center gap-2 bg-surface border border-border rounded-lg px-6 py-3 text-sm font-semibold text-gold hover:border-gold/50 hover:bg-surface-alt transition-all"
                       >
                         Load More
-                        <span className="text-cream-muted text-xs">({filtered.length - visibleCount} remaining)</span>
+                        <span className="text-text-muted text-xs">({filtered.length - visibleCount} remaining)</span>
                       </button>
                     </div>
                   )}
                 </>
               ) : (
                 <div className="text-center py-20 animate-fade-in">
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-navy-light flex items-center justify-center">
-                    <svg className="w-10 h-10 text-cream-muted/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-surface-alt flex items-center justify-center">
+                    <svg className="w-10 h-10 text-text-muted/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                     </svg>
                   </div>
-                  <h3 className="font-serif text-xl font-bold text-cream mb-2">No pieces found</h3>
-                  <p className="text-cream-muted text-sm mb-6 max-w-sm mx-auto">
+                  <h3 className="font-serif text-xl font-bold text-text mb-2">No pieces found</h3>
+                  <p className="text-text-muted text-sm mb-6 max-w-sm mx-auto">
                     Try adjusting your filters or clearing them to see all available pieces.
                   </p>
                   <button
@@ -200,7 +190,6 @@ export function GalleryPageClient({
         </Container>
       </section>
 
-      {/* Mobile filter drawer */}
       <FilterDrawer
         isOpen={drawerOpen}
         onClose={() => setDrawerOpen(false)}

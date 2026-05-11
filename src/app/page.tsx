@@ -16,9 +16,9 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e1a] via-[#0a0e1a]/30 to-[#0a0e1a] dark:from-navy-deep dark:via-navy-mid/30 dark:to-navy-deep" />
-        <ParticleCanvas particleCount={40} variant="stars" />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-bg">
+        <div className="absolute inset-0 bg-gradient-to-b from-surface-alt via-bg to-surface-alt" />
+        <ParticleCanvas particleCount={30} variant="dust" color="rgba(212,175,55,0.12)" />
         <div className="relative z-10 text-center px-4">
           <ScrollReveal delay={0}>
             <p className="text-gold text-sm sm:text-base uppercase tracking-[0.3em] font-semibold mb-4">
@@ -26,14 +26,14 @@ export default function HomePage() {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={200}>
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#1a1a2e] dark:text-cream leading-tight mb-6">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-text leading-tight mb-6">
               Limited Edition Prints
               <br />
               <span className="text-gold">That Capture History</span>
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={400}>
-            <p className="text-text-muted-light dark:text-cream-muted text-lg sm:text-xl max-w-2xl mx-auto mb-8">
+            <p className="text-text-muted text-lg sm:text-xl max-w-2xl mx-auto mb-8">
               Hand-signed aviation, motorsport, maritime, and wildlife art from the world&apos;s leading artists.
             </p>
           </ScrollReveal>
@@ -55,7 +55,7 @@ export default function HomePage() {
       <section className="py-20">
         <Container>
           <ScrollReveal>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-center mb-12 text-[#1a1a2e] dark:text-cream">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-center mb-12 text-text">
               Explore Our <span className="text-gold">Collections</span>
             </h2>
           </ScrollReveal>
@@ -64,16 +64,16 @@ export default function HomePage() {
               <ScrollReveal key={cat.id} delay={i * 100}>
                 <a
                   href={`/${cat.slug}`}
-                  className="group block bg-white dark:bg-navy-light border border-border-light dark:border-navy-mid rounded-xl overflow-hidden transition-all duration-300 hover:border-gold/30 hover:shadow-lg hover:shadow-gold/5"
+                  className="group block bg-surface border border-border rounded-xl overflow-hidden transition-all duration-300 hover:border-gold/30 hover:shadow-lg hover:shadow-gold/5"
                 >
-                  <div className="aspect-[4/3] bg-surface-light-alt dark:bg-navy-mid flex items-center justify-center">
+                  <div className="aspect-[4/3] bg-surface-alt flex items-center justify-center">
                     <span className="text-gold/30 text-6xl">✦</span>
                   </div>
                   <div className="p-5">
-                    <h3 className="font-serif text-xl font-bold text-[#1a1a2e] dark:text-cream group-hover:text-gold transition-colors">
+                    <h3 className="font-serif text-xl font-bold text-text group-hover:text-gold transition-colors">
                       {cat.name}
                     </h3>
-                    <p className="text-text-muted-light dark:text-cream-muted text-sm mt-2 line-clamp-2">{cat.description}</p>
+                    <p className="text-text-muted text-sm mt-2 line-clamp-2">{cat.description}</p>
                   </div>
                 </a>
               </ScrollReveal>
@@ -84,12 +84,12 @@ export default function HomePage() {
 
       {/* Latest Releases */}
       {latestProducts.length > 0 && (
-        <section className="py-20 bg-surface-light-alt dark:bg-navy-light/50">
+        <section className="py-20 bg-surface-alt">
           <Container>
             <ScrollReveal>
               <div className="text-center mb-12">
                 <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-2">Just Arrived</p>
-                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1a1a2e] dark:text-cream">
+                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-text">
                   Latest <span className="text-gold">Releases</span>
                 </h2>
               </div>
@@ -105,7 +105,7 @@ export default function HomePage() {
           <Container>
             <ScrollReveal>
               <div className="text-center mb-12">
-                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1a1a2e] dark:text-cream">
+                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-text">
                   Featured <span className="text-gold">Pieces</span>
                 </h2>
               </div>
@@ -116,7 +116,7 @@ export default function HomePage() {
       )}
 
       {/* Trust Signals */}
-      <section className="py-20 bg-surface-light-alt dark:bg-navy-light/50">
+      <section className="py-20 bg-surface-alt">
         <Container>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -128,8 +128,8 @@ export default function HomePage() {
               <ScrollReveal key={item.title} delay={i * 100}>
                 <div className="text-center">
                   <span className="text-3xl mb-3 block">{item.icon}</span>
-                  <h3 className="font-serif text-lg font-bold text-[#1a1a2e] dark:text-cream mb-2">{item.title}</h3>
-                  <p className="text-text-muted-light dark:text-cream-muted text-sm">{item.desc}</p>
+                  <h3 className="font-serif text-lg font-bold text-text mb-2">{item.title}</h3>
+                  <p className="text-text-muted text-sm">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -142,10 +142,10 @@ export default function HomePage() {
         <Container>
           <ScrollReveal>
             <div className="text-center max-w-lg mx-auto">
-              <h2 className="font-serif text-3xl font-bold mb-4 text-[#1a1a2e] dark:text-cream">
+              <h2 className="font-serif text-3xl font-bold mb-4 text-text">
                 Never Miss a <span className="text-gold">New Release</span>
               </h2>
-              <p className="text-text-muted-light dark:text-cream-muted mb-6">
+              <p className="text-text-muted mb-6">
                 Join our collector community for early access, exclusive offers, and artist stories.
               </p>
               <NewsletterForm />

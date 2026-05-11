@@ -10,9 +10,8 @@ interface CategoryHeroProps {
 
 export function CategoryHero({ categoryName, productCount, description }: CategoryHeroProps) {
   return (
-    <section className="relative py-16 sm:py-24 overflow-hidden">
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-mid/60 via-navy-deep to-navy-deep" />
+    <section className="relative py-16 sm:py-24 overflow-hidden bg-surface-alt">
+      {/* Decorative gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent" />
 
       {/* Decorative line */}
@@ -20,12 +19,12 @@ export function CategoryHero({ categoryName, productCount, description }: Catego
 
       <Container className="relative">
         {/* Breadcrumb */}
-        <nav className="text-cream-muted text-sm mb-6 animate-fade-up" style={{ animationDelay: "0ms" }}>
+        <nav className="text-text-muted text-sm mb-6 animate-fade-up" style={{ animationDelay: "0ms" }}>
           <a href="/" className="hover:text-gold transition-colors">Home</a>
           <span className="mx-2">/</span>
           <a href="/gallery" className="hover:text-gold transition-colors">Gallery</a>
           <span className="mx-2">/</span>
-          <span className="text-cream">{categoryName}</span>
+          <span className="text-text">{categoryName}</span>
         </nav>
 
         {/* Title */}
@@ -37,7 +36,7 @@ export function CategoryHero({ categoryName, productCount, description }: Catego
 
         {/* Meta */}
         <div className="animate-fade-up" style={{ animationDelay: "200ms" }}>
-          <p className="text-cream-muted text-base sm:text-lg">
+          <p className="text-text-muted text-base sm:text-lg">
             {productCount} piece{productCount !== 1 ? "s" : ""} in this collection
           </p>
         </div>
@@ -45,7 +44,7 @@ export function CategoryHero({ categoryName, productCount, description }: Catego
         {/* Description */}
         {description && (
           <div className="animate-fade-up mt-4" style={{ animationDelay: "300ms" }}>
-            <p className="text-cream-muted/80 text-base max-w-2xl leading-relaxed">{description}</p>
+            <p className="text-text-muted/80 text-base max-w-2xl leading-relaxed">{description}</p>
           </div>
         )}
       </Container>

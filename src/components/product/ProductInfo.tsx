@@ -30,7 +30,7 @@ export function ProductInfo({ product, artistName, artistSlug, categoryName, cat
         {product.salePrice && <Badge variant="sale" />}
         {!product.inStock && <Badge variant="sold-out" />}
         {product.isSigned && (
-          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wide bg-navy-mid text-gold border border-gold/30">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wide bg-surface-alt text-gold border border-gold/30">
             ✍ Signed
           </span>
         )}
@@ -38,7 +38,7 @@ export function ProductInfo({ product, artistName, artistSlug, categoryName, cat
 
       {/* Title */}
       <div className="animate-fade-up" style={{ animationDelay: "250ms" }}>
-        <h1 className="font-serif text-3xl sm:text-4xl font-bold text-cream leading-tight">
+        <h1 className="font-serif text-3xl sm:text-4xl font-bold text-text leading-tight">
           {product.title}
         </h1>
         <a
@@ -62,7 +62,7 @@ export function ProductInfo({ product, artistName, artistSlug, categoryName, cat
       )}
 
       {/* Edition info */}
-      <div className="animate-fade-up flex flex-wrap gap-3 text-sm text-cream-muted" style={{ animationDelay: "400ms" }}>
+      <div className="animate-fade-up flex flex-wrap gap-3 text-sm text-text-muted" style={{ animationDelay: "400ms" }}>
         <span className="inline-flex items-center gap-1.5">
           <svg className="w-4 h-4 text-gold/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -98,7 +98,7 @@ export function ProductInfo({ product, artistName, artistSlug, categoryName, cat
       </div>
 
       {/* Trust signals */}
-      <div className="animate-fade-up border-t border-navy-mid pt-5 grid grid-cols-3 gap-3" style={{ animationDelay: "500ms" }}>
+      <div className="animate-fade-up border-t border-border pt-5 grid grid-cols-3 gap-3" style={{ animationDelay: "500ms" }}>
         <TrustItem icon={
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
@@ -117,9 +117,9 @@ export function ProductInfo({ product, artistName, artistSlug, categoryName, cat
       </div>
 
       {/* Description */}
-      <div className="animate-fade-up border-t border-navy-mid pt-5" style={{ animationDelay: "550ms" }}>
-        <h3 className="font-serif text-lg font-bold text-cream mb-3">Description</h3>
-        <p className="text-cream-muted leading-relaxed whitespace-pre-line">{displayedDescription}</p>
+      <div className="animate-fade-up border-t border-border pt-5" style={{ animationDelay: "550ms" }}>
+        <h3 className="font-serif text-lg font-bold text-text mb-3">Description</h3>
+        <p className="text-text-muted leading-relaxed whitespace-pre-line">{displayedDescription}</p>
         {isLongDescription && (
           <button
             onClick={() => setExpanded(!expanded)}
@@ -132,14 +132,14 @@ export function ProductInfo({ product, artistName, artistSlug, categoryName, cat
 
       {/* Specifications */}
       {product.specifications && (
-        <div className="animate-fade-up border-t border-navy-mid pt-5" style={{ animationDelay: "600ms" }}>
-          <h3 className="font-serif text-lg font-bold text-cream mb-3">Specifications</h3>
-          <div className="bg-navy-light rounded-lg overflow-hidden divide-y divide-navy-mid">
+        <div className="animate-fade-up border-t border-border pt-5" style={{ animationDelay: "600ms" }}>
+          <h3 className="font-serif text-lg font-bold text-text mb-3">Specifications</h3>
+          <div className="bg-surface-alt rounded-lg overflow-hidden divide-y divide-border">
             {Object.entries(product.specifications).map(([key, value]) =>
               value ? (
                 <div key={key} className="flex justify-between px-4 py-2.5">
-                  <span className="text-cream-muted text-sm capitalize">{key.replace(/([A-Z])/g, " $1").trim()}</span>
-                  <span className="text-cream text-sm text-right">{String(value)}</span>
+                  <span className="text-text-muted text-sm capitalize">{key.replace(/([A-Z])/g, " $1").trim()}</span>
+                  <span className="text-text text-sm text-right">{String(value)}</span>
                 </div>
               ) : null
             )}
@@ -154,7 +154,7 @@ function TrustItem({ icon, label }: { icon: React.ReactNode; label: string }) {
   return (
     <div className="flex flex-col items-center gap-1.5 text-center">
       <div className="text-gold/70">{icon}</div>
-      <span className="text-[11px] text-cream-muted leading-tight">{label}</span>
+      <span className="text-[11px] text-text-muted leading-tight">{label}</span>
     </div>
   );
 }

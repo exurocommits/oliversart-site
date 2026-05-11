@@ -6,15 +6,15 @@ export function ScarcityIndicator({ remaining, total }: { remaining: number; tot
   return (
     <div className="flex flex-col gap-1">
       <div className="flex items-center justify-between text-xs">
-        <span className={isGone ? "text-text-muted-light dark:text-cream-muted" : isLow ? "text-warning font-semibold" : "text-text-muted-light dark:text-cream-muted"}>
+        <span className={isGone ? "text-text-muted" : isLow ? "text-warning font-semibold" : "text-text-muted"}>
           {isGone ? "Sold out" : `${remaining} of ${total} remaining`}
         </span>
-        <span className="text-text-muted-light dark:text-cream-muted">{percentage}% available</span>
+        <span className="text-text-muted">{percentage}% available</span>
       </div>
-      <div className="h-1.5 bg-border-light dark:bg-navy-mid rounded-full overflow-hidden">
+      <div className="h-1.5 bg-border rounded-full overflow-hidden">
         <div
           className={`h-full rounded-full transition-all duration-500 ${
-            isGone ? "bg-text-muted-light/20 dark:bg-cream-muted/20" : isLow ? "bg-warning" : "bg-gold"
+            isGone ? "bg-border" : isLow ? "bg-warning" : "bg-gold"
           }`}
           style={{ width: `${percentage}%` }}
         />

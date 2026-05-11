@@ -14,9 +14,9 @@ export function ProductCard({ product }: ProductCardProps) {
     : "Unknown Artist";
 
   return (
-    <div className="group bg-white dark:bg-navy-light border border-border-light dark:border-navy-mid rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-gold/5 hover:border-gold/30 hover:-translate-y-1">
+    <div className="group bg-surface border border-border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-gold/5 hover:border-gold/30 hover:-translate-y-1">
       {/* Image */}
-      <Link href={`/product/${product.slug}`} className="block relative aspect-[4/3] overflow-hidden bg-[#f3f0ec] dark:bg-navy-mid">
+      <Link href={`/product/${product.slug}`} className="block relative aspect-[4/3] overflow-hidden bg-surface-alt">
         <img
           src={primaryImage?.url || "/images/placeholder.jpg"}
           alt={primaryImage?.alt || product.title}
@@ -32,7 +32,7 @@ export function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
         {product.isSigned && (
-          <div className="absolute top-3 right-3 bg-white/80 dark:bg-navy-deep/80 backdrop-blur-sm text-gold text-xs px-2 py-1 rounded-full">
+          <div className="absolute top-3 right-3 bg-surface/80 backdrop-blur-sm text-gold text-xs px-2 py-1 rounded-full">
             ✍ Signed
           </div>
         )}
@@ -41,16 +41,16 @@ export function ProductCard({ product }: ProductCardProps) {
       {/* Info */}
       <div className="p-4">
         <Link href={`/product/${product.slug}`}>
-          <h3 className="font-serif font-bold text-[#1a1a2e] dark:text-cream group-hover:text-gold transition-colors line-clamp-1">
+          <h3 className="font-serif font-bold text-text group-hover:text-gold transition-colors line-clamp-1">
             {product.title}
           </h3>
         </Link>
-        <p className="text-text-muted-light dark:text-cream-muted text-sm mt-1">{artistName}</p>
+        <p className="text-text-muted text-sm mt-1">{artistName}</p>
         <div className="mt-3">
           <Price price={product.price} salePrice={product.salePrice} size="sm" />
         </div>
         {product.editionType === "limited" && product.editionSize && product.editionRemaining !== undefined && (
-          <p className="text-text-muted-light dark:text-cream-muted text-xs mt-2">
+          <p className="text-text-muted text-xs mt-2">
             Edition of {product.editionSize} — {product.editionRemaining} remaining
           </p>
         )}

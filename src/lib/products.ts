@@ -98,3 +98,7 @@ export function getProductsByCategory(categorySlug: string): Product[] {
 export function getLatestProducts(limit = 8): Product[] {
   return getAllProducts().slice(0, limit);
 }
+
+export function getProductsByArtistId(artistId: string): Product[] {
+  return getAllProducts().filter((p) => p.artistId === artistId);
+}

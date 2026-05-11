@@ -19,17 +19,17 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <>
-      <section className="py-16 bg-gradient-to-b from-surface-light-alt dark:from-navy-mid/30 to-transparent">
+      <section className="py-16 bg-surface-alt">
         <Container>
-          <nav className="text-text-muted-light dark:text-cream-muted text-sm mb-4">
+          <nav className="text-text-muted text-sm mb-4">
             <a href="/" className="hover:text-gold transition-colors">Home</a>
             <span className="mx-2">/</span>
-            <span className="text-[#1a1a2e] dark:text-cream">{displayName}</span>
+            <span className="text-text">{displayName}</span>
           </nav>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4 text-[#1a1a2e] dark:text-cream">
+          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-text mb-4">
             <span className="text-gold">{displayName}</span>
           </h1>
-          <p className="text-text-muted-light dark:text-cream-muted text-lg max-w-2xl">
+          <p className="text-text-muted text-lg max-w-2xl">
             {cat.description || `Browse our curated collection of ${displayName.toLowerCase()} art. Each piece is hand-signed and comes with a certificate of authenticity.`}
           </p>
         </Container>
@@ -38,8 +38,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       <section className="py-12">
         <Container>
           <div className="flex items-center justify-between mb-8">
-            <p className="text-text-muted-light dark:text-cream-muted text-sm">{filtered.length} result{filtered.length !== 1 ? "s" : ""}</p>
-            <select className="bg-white dark:bg-navy-light border border-border-light dark:border-navy-mid rounded-lg px-3 py-2 text-sm text-[#1a1a2e] dark:text-cream focus:outline-none focus:border-gold">
+            <p className="text-text-muted text-sm">{filtered.length} result{filtered.length !== 1 ? "s" : ""}</p>
+            <select className="bg-surface border border-border rounded-lg px-3 py-2 text-sm text-text focus:outline-none focus:border-gold">
               <option>Newest</option>
               <option>Price: Low to High</option>
               <option>Price: High to Low</option>
@@ -49,7 +49,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             <ProductGrid products={filtered} />
           ) : (
             <div className="text-center py-20">
-              <p className="text-text-muted-light dark:text-cream-muted text-lg">No products found in this category.</p>
+              <p className="text-text-muted text-lg">No products found in this category.</p>
             </div>
           )}
         </Container>

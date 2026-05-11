@@ -7,14 +7,14 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-20 bg-gradient-to-b from-navy-mid/30 to-navy-deep">
+      <section className="py-20 bg-surface-alt">
         <Container>
           <ScrollReveal>
             <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-2">Our Story</p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4">
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-text mb-4">
               Family-Run, <span className="text-gold">Passion-Driven</span>
             </h1>
-            <p className="text-cream-muted text-lg max-w-2xl">
+            <p className="text-text-muted text-lg max-w-2xl">
               For over two decades, Oliver&apos;s Art has been the trusted home for collectors of limited edition aviation, motorsport, maritime, and wildlife art.
             </p>
           </ScrollReveal>
@@ -31,10 +31,10 @@ export default function AboutPage() {
               { icon: "🔥", title: "Passion", desc: "We share our collectors' passion for these subjects. Every piece tells a story worth preserving and celebrating." },
             ].map((value, i) => (
               <ScrollReveal key={value.title} delay={i * 150}>
-                <div className="text-center p-8 bg-navy-light border border-navy-mid rounded-xl">
+                <div className="text-center p-8 bg-surface border border-border rounded-xl">
                   <span className="text-4xl mb-4 block">{value.icon}</span>
-                  <h3 className="font-serif text-xl font-bold text-cream mb-3">{value.title}</h3>
-                  <p className="text-cream-muted text-sm leading-relaxed">{value.desc}</p>
+                  <h3 className="font-serif text-xl font-bold text-text mb-3">{value.title}</h3>
+                  <p className="text-text-muted text-sm leading-relaxed">{value.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -43,14 +43,14 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-navy-light/50">
+      <section className="py-20 bg-surface-alt">
         <Container>
           <ScrollReveal>
             <div className="text-center">
-              <h2 className="font-serif text-3xl font-bold mb-4">
+              <h2 className="font-serif text-3xl font-bold text-text mb-4">
                 Meet the <span className="text-gold">Artists</span>
               </h2>
-              <p className="text-cream-muted mb-8 max-w-lg mx-auto">
+              <p className="text-text-muted mb-8 max-w-lg mx-auto">
                 Discover the talented artists behind our collection.
               </p>
               <Link href="/artists">

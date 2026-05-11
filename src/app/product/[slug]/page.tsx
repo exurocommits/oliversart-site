@@ -24,12 +24,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
   return (
     <>
       {/* Breadcrumb */}
-      <section className="py-4 border-b border-border-light dark:border-navy-mid">
+      <section className="py-4 border-b border-border">
         <Container>
-          <nav className="text-text-muted-light dark:text-cream-muted text-sm">
+          <nav className="text-text-muted text-sm">
             <a href="/" className="hover:text-gold transition-colors">Home</a>
             <span className="mx-2">/</span>
-            <span className="text-[#1a1a2e] dark:text-cream">{product.title}</span>
+            <span className="text-text">{product.title}</span>
           </nav>
         </Container>
       </section>
@@ -40,7 +40,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
             {/* Images (3/5) */}
             <div className="lg:col-span-3">
-              <div className="aspect-[4/3] bg-surface-light-alt dark:bg-navy-light rounded-xl overflow-hidden">
+              <div className="aspect-[4/3] bg-surface-alt rounded-xl overflow-hidden">
                 <img
                   src={primaryImage?.url || "/images/placeholder.jpg"}
                   alt={primaryImage?.alt || product.title}
@@ -50,7 +50,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               {product.images.length > 1 && (
                 <div className="flex gap-3 mt-4">
                   {product.images.map((img) => (
-                    <div key={img.id} className="w-20 h-20 bg-surface-light-alt dark:bg-navy-light rounded-lg overflow-hidden border-2 border-transparent hover:border-gold transition-colors cursor-pointer">
+                    <div key={img.id} className="w-20 h-20 bg-surface-alt rounded-lg overflow-hidden border-2 border-transparent hover:border-gold transition-colors cursor-pointer">
                       <img src={img.url} alt={img.alt} className="w-full h-full object-cover" />
                     </div>
                   ))}
@@ -66,7 +66,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 {!product.inStock && <Badge variant="sold-out" />}
               </div>
 
-              <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#1a1a2e] dark:text-cream mb-2">
+              <h1 className="font-serif text-3xl sm:text-4xl font-bold text-text mb-2">
                 {product.title}
               </h1>
 
@@ -98,19 +98,19 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </div>
 
               <div className="mt-8 space-y-4">
-                <h3 className="font-serif text-lg font-bold text-[#1a1a2e] dark:text-cream">Description</h3>
-                <p className="text-text-muted-light dark:text-cream-muted leading-relaxed">{product.description}</p>
+                <h3 className="font-serif text-lg font-bold text-text">Description</h3>
+                <p className="text-text-muted leading-relaxed">{product.description}</p>
               </div>
 
               {product.specifications && (
                 <div className="mt-8">
-                  <h3 className="font-serif text-lg font-bold text-[#1a1a2e] dark:text-cream mb-4">Specifications</h3>
-                  <div className="bg-surface-light-alt dark:bg-navy-light rounded-lg overflow-hidden">
+                  <h3 className="font-serif text-lg font-bold text-text mb-4">Specifications</h3>
+                  <div className="bg-surface-alt rounded-lg overflow-hidden">
                     {Object.entries(product.specifications).map(([key, value]) =>
                       value ? (
-                        <div key={key} className="flex justify-between px-4 py-2 border-b border-border-light dark:border-navy-mid last:border-0">
-                          <span className="text-text-muted-light dark:text-cream-muted text-sm capitalize">{key.replace(/([A-Z])/g, " $1")}</span>
-                          <span className="text-[#1a1a2e] dark:text-cream text-sm">{value}</span>
+                        <div key={key} className="flex justify-between px-4 py-2 border-b border-border last:border-0">
+                          <span className="text-text-muted text-sm capitalize">{key.replace(/([A-Z])/g, " $1")}</span>
+                          <span className="text-text text-sm">{value}</span>
                         </div>
                       ) : null
                     )}
