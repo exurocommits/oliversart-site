@@ -14,6 +14,7 @@ interface ScrapedProduct {
   editionSize?: number;
   url: string;
   inStock: boolean;
+  images?: string[];
 }
 
 const scraped = (scrapedData.products ?? []) as ScrapedProduct[];
@@ -58,17 +59,25 @@ export function getAllProducts(): Product[] {
       editionSize: sp.editionSize,
       isSigned: true,
       isNumbered: true,
-      images: [
-        {
-          id: `${id}-img-1`,
-          url: "/images/placeholder.jpg",
-          alt: sp.title,
-          width: 800,
-          height: 600,
-          isPrimary: true,
-          sortOrder: 1,
-        },
-      ],
+      images: (sp.images && sp.images.length > 0)
+        ? sp.images.map((url, i) => ({
+            id: `${id}-img-${i + 1}`,
+            url,
+            alt: sp.title,
+            width: 800,
+            height: 600,
+            isPrimary: i === 0,
+            sortOrder: i + 1,
+          }))
+        : [{
+            id: `${id}-img-1`,
+            url: "/images/placeholder.jpg",
+            alt: sp.title,
+            width: 800,
+            height: 600,
+            isPrimary: true,
+            sortOrder: 1,
+          }],
       primaryImageId: `${id}-img-1`,
       description: sp.description || sp.title,
       shortDescription: sp.description

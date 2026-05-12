@@ -24,7 +24,7 @@ interface Particle {
 
 export function ParticleCanvas({
   particleCount = 60,
-  color = "rgba(212,175,55,0.15)",
+  color = "rgba(44,44,44,0.08)",
   speed = 0.2,
   size = 1.5,
   interaction = "mouse",

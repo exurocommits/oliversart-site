@@ -18,7 +18,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-bg">
         <div className="absolute inset-0 bg-gradient-to-b from-surface-alt via-bg to-surface-alt" />
-        <ParticleCanvas particleCount={30} variant="dust" color="rgba(212,175,55,0.12)" />
+        <ParticleCanvas particleCount={30} variant="dust" color="rgba(44,44,44,0.08)" />
         <div className="relative z-10 text-center px-4">
           <ScrollReveal delay={0}>
             <p className="text-gold text-sm sm:text-base uppercase tracking-[0.3em] font-semibold mb-4">

@@ -29,7 +29,7 @@ export function MouseGlow({ children }: { children: React.ReactNode }) {
       <div
         className="pointer-events-none absolute inset-0 z-0 opacity-30 transition-opacity duration-300"
         style={{
-          background: "radial-gradient(600px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(212,175,55,0.15), transparent 40%)",
+          background: "radial-gradient(600px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(44,44,44,0.06), transparent 40%)",
         }}
       />
       {children}
