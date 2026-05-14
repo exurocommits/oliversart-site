@@ -30,10 +30,10 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
   const links = [
     { label: "Home", href: "/" },
-    { label: "Aviation", href: "/aviation" },
-    { label: "Motorsport", href: "/motorsport" },
-    { label: "Maritime", href: "/maritime" },
-    { label: "Wildlife", href: "/wildlife" },
+    { label: "Aviation", href: "/gallery/aviation" },
+    { label: "Motorsport", href: "/gallery/motorsport" },
+    { label: "Maritime", href: "/gallery/maritime" },
+    { label: "Contemporary Art", href: "/gallery/contemporary-art" },
     { label: "Latest Releases", href: "/latest-releases" },
     { label: "Artists", href: "/artists" },
   ];

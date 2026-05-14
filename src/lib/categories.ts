@@ -40,7 +40,7 @@ export function getAllCategories(): Category[] {
     name: cat.name,
     description: `Browse our ${cat.name.toLowerCase()} collection of limited edition prints.`,
     sortOrder: i + 1,
-    showInNav: ["aviation", "motorsport", "maritime", "contemporary-art", "latest-releases"].includes(cat.slug),
+    showInNav: ["aviation", "motorsport", "maritime", "contemporary-art"].includes(cat.slug),
     showInFooter: ["aviation", "motorsport", "maritime"].includes(cat.slug),
     subcategories: cat.subcategories ? mapSubcategories(cat.subcategories) : undefined,
     createdAt: new Date("2026-04-10"),

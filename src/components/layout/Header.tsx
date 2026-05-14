@@ -32,18 +32,19 @@ export function Header({ transparent = false, showCartBadge = true, cartItemCoun
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <a href="/" className="flex items-center gap-2">
-              <span className="text-gold font-serif text-2xl font-bold">OA</span>
-              <span className="hidden sm:block text-text font-serif text-lg">
-                Oliver&apos;s Art
-              </span>
+              <img
+                src="/logo.png"
+                alt="Oliver's Art"
+                className="h-10 lg:h-12 w-auto"
+              />
             </a>
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-8">
-              {["Aviation", "Motorsport", "Maritime", "Wildlife"].map((item) => (
+              {["Aviation", "Motorsport", "Maritime", "Contemporary Art"].map((item) => (
                 <a
                   key={item}
-                  href={`/${item.toLowerCase()}`}
+                  href={`/gallery/${item === "Contemporary Art" ? "contemporary-art" : item.toLowerCase()}`}
                   className="text-text-muted hover:text-gold transition-colors text-sm font-medium uppercase tracking-wider"
                 >
                   {item}
@@ -109,14 +110,21 @@ function MobileMenuOverlay({ onClose }: { onClose: () => void }) {
           </svg>
         </button>
         <nav className="flex flex-col gap-4">
-          {["Aviation", "Motorsport", "Maritime", "Wildlife", "Latest Releases", "Artists"].map((item) => (
+          {[
+            { name: "Aviation", href: "/gallery/aviation" },
+            { name: "Motorsport", href: "/gallery/motorsport" },
+            { name: "Maritime", href: "/gallery/maritime" },
+            { name: "Contemporary Art", href: "/gallery/contemporary-art" },
+            { name: "Latest Releases", href: "/latest-releases" },
+            { name: "Artists", href: "/artists" },
+          ].map((item) => (
             <a
-              key={item}
-              href={item.includes(" ") ? `/${item.toLowerCase().replace(" ", "-")}` : `/${item.toLowerCase()}`}
+              key={item.name}
+              href={item.href}
               className="text-text text-lg font-medium hover:text-gold transition-colors py-2 border-b border-border"
               onClick={onClose}
             >
-              {item}
+              {item.name}
             </a>
           ))}
         </nav>

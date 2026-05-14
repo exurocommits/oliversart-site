@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: "Oliver's Art — Limited Edition Aviation, Motorsport & Maritime Art",
   description:
     "Hand-signed limited edition prints from the world's leading artists. Aviation, motorsport, maritime, and wildlife art.",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -32,8 +35,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="min-h-screen flex flex-col antialiased">
-        <Header />
+      <body className="min-h-screen flex flex-col antialiased grain-overlay">
+        <Header transparent />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
