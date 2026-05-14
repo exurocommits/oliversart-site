@@ -29,6 +29,44 @@
   --animate-marquee: marquee 40s linear infinite;
   --animate-grain: grain 8s steps(10) infinite;
 
+  /* Hero slideshow keyframes */
+  --animate-hero-slide-entering: hero-fade-in 1.8s ease forwards;
+  --animate-hero-slide-exiting: hero-fade-out 1.8s ease forwards;
+  --animate-kb-pan-right: kb-pan-right 7.3s ease-in-out forwards;
+  --animate-kb-pan-left: kb-pan-left 7.3s ease-in-out forwards;
+  --animate-kb-zoom-in: kb-zoom-in 7.3s ease-in-out forwards;
+  --animate-kb-pan-up: kb-pan-up 7.3s ease-in-out forwards;
+  --animate-kb-zoom-out: kb-zoom-out 7.3s ease-in-out forwards;
+
+  @keyframes hero-fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes hero-fade-out {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @keyframes kb-pan-right {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.12) translate(-2%, -1%); }
+  }
+  @keyframes kb-pan-left {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.10) translate(2%, 1%); }
+  }
+  @keyframes kb-zoom-in {
+    0% { transform: scale(1.08) translate(-1%, 0); }
+    100% { transform: scale(1) translate(1%, 0); }
+  }
+  @keyframes kb-pan-up {
+    0% { transform: scale(1) translate(1%, 1%); }
+    100% { transform: scale(1.14) translate(-1%, -1%); }
+  }
+  @keyframes kb-zoom-out {
+    0% { transform: scale(1.06) translate(0, 1%); }
+    100% { transform: scale(1) translate(0, -1%); }
+  }
+
   @keyframes fade-up {
     0% { opacity: 0; transform: translateY(40px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -133,6 +171,29 @@
     animation: marquee 40s linear infinite;
   }
 
+  /* Hero slideshow animations */
+  .hero-slide--entering {
+    animation: hero-fade-in 1.8s ease forwards;
+  }
+  .hero-slide--exiting {
+    animation: hero-fade-out 1.8s ease forwards;
+  }
+  .kb-pan-right {
+    animation: kb-pan-right 7.3s ease-in-out forwards;
+  }
+  .kb-pan-left {
+    animation: kb-pan-left 7.3s ease-in-out forwards;
+  }
+  .kb-zoom-in {
+    animation: kb-zoom-in 7.3s ease-in-out forwards;
+  }
+  .kb-pan-up {
+    animation: kb-pan-up 7.3s ease-in-out forwards;
+  }
+  .kb-zoom-out {
+    animation: kb-zoom-out 7.3s ease-in-out forwards;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .animate-fade-up,
     .animate-scroll-pulse,
@@ -141,7 +202,14 @@
     .animate-fade-in,
     .animate-slide-up,
     .animate-scale-in,
-    .animate-marquee {
+    .animate-marquee,
+    .hero-slide--entering,
+    .hero-slide--exiting,
+    .kb-pan-right,
+    .kb-pan-left,
+    .kb-zoom-in,
+    .kb-pan-up,
+    .kb-zoom-out {
       animation: none !important;
       opacity: 1 !important;
       transform: none !important;

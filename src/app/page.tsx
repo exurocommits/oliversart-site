@@ -2,21 +2,20 @@ import { Container } from "@/components/ui/Container";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
+import { HeroSlideshow } from "@/components/hero/HeroSlideshow";
 import { getAllProducts, getLatestProducts } from "@/lib/products";
 import { getAllCategories } from "@/lib/categories";
 import { getAllArtists } from "@/lib/artists";
 import Link from "next/link";
 
-// Category representative images from scraped data
+// Category representative images
 const categoryImages: Record<string, string> = {
-  aviation: "/images/cat-aviation.jpg",
-  motorsport: "/images/cat-motorsport.jpg",
-  maritime: "/images/cat-maritime.jpg",
-  "contemporary-art": "/images/cat-contemporary.jpg",
-  "latest-releases": "/images/hero-mosquito-thunder.jpg",
+  aviation: "https://i0.wp.com/oliversart.com/wp-content/uploads/2023/08/Flying-Tigers-by-James-Dietz.jpg?fit=900%2C407&ssl=1",
+  motorsport: "https://i0.wp.com/oliversart.com/wp-content/uploads/2019/12/barry_sheene_ray_goldsbrough.jpg?fit=650%2C471&ssl=1",
+  maritime: "https://i0.wp.com/oliversart.com/wp-content/uploads/2022/01/Attack-on-the-Arizona-by-Keith-Burns.jpg?fit=900%2C592&ssl=1",
+  "contemporary-art": "https://i0.wp.com/oliversart.com/wp-content/uploads/2023/10/Color-Guard-by-James-Dietz-Limited-Edition.jpg?fit=900%2C465&ssl=1",
+  "latest-releases": "https://i0.wp.com/oliversart.com/wp-content/uploads/2021/08/Ace-Over-Normandy-by-Anthony-Saunders.jpg?fit=900%2C598&ssl=1",
 };
-
-const heroImage = "/images/hero-mosquito-thunder.jpg";
 
 export default function HomePage() {
   const products = getAllProducts();
@@ -27,59 +26,8 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-        {/* Background image */}
-        <img
-          src={heroImage}
-          alt="Mosquito Thunder by Anthony Saunders — Limited Edition Aviation Art"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
-        {/* Content */}
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <ScrollReveal delay={0}>
-            <p className="text-gold text-sm sm:text-base uppercase tracking-[0.3em] font-semibold mb-6">
-              Exciting Art. Action Art.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={200}>
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
-              Limited Edition Prints
-              <br />
-              <span className="text-gold">That Capture History</span>
-            </h1>
-          </ScrollReveal>
-          <ScrollReveal delay={400}>
-            <p className="text-white/70 text-lg sm:text-xl max-w-2xl mx-auto mb-10">
-              Hand-signed aviation, motorsport, and maritime art from the world&apos;s leading artists. Each print a window into a moment that changed everything.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={600}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/gallery/aviation"
-                className="inline-flex items-center justify-center px-8 py-3.5 bg-gold text-white font-semibold rounded-lg hover:bg-gold-dim transition-all duration-200 text-base"
-              >
-                Explore Collection
-              </a>
-              <a
-                href="/latest-releases"
-                className="inline-flex items-center justify-center px-8 py-3.5 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-200 text-base"
-              >
-                Latest Releases
-              </a>
-            </div>
-          </ScrollReveal>
-        </div>
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-scroll-pulse">
-          <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </div>
-      </section>
+      {/* Hero — Cinematic slideshow */}
+      <HeroSlideshow />
 
       {/* Artist Marquee */}
       <div className="bg-text py-3 overflow-hidden">
